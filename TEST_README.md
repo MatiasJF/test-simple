@@ -1,10 +1,10 @@
-# BSV Simplifier - Test Application
+# BSV Simple - Test Application
 
-This Next.js application demonstrates the **@bsv/simplifier** library in action.
+This Next.js application demonstrates the **@bsv/simple** library in action.
 
 ## What This Tests
 
-The test page (`app/page.tsx`) provides interactive buttons to test all major features of the simplifier library:
+The test page (`app/page.tsx`) provides interactive buttons to test all major features of the simple library:
 
 ### 1. **Wallet Connection** 🔗
 - Tests: `createWallet()` and `wallet.getStatus()`
@@ -87,7 +87,7 @@ const memoScript = new Script()
 const result = await client.createAction({...})
 ```
 
-**After (Simplifier)**:
+**After (Simple)**:
 ```typescript
 // 3 lines of code
 const wallet = await createWallet()
@@ -138,7 +138,7 @@ app/page.tsx
 
 ## Testing Workflow
 
-1. **Connect Wallet** - Initialize the simplifier library
+1. **Connect Wallet** - Initialize the simple library
 2. **Run Operations** - Test payments, tokens, inscriptions
 3. **View Results** - See success/failure with full data
 4. **Clear & Repeat** - Reset and test again
@@ -177,7 +177,7 @@ After testing the basic functionality:
 
 - Next.js 15+
 - React 19+
-- @bsv/simplifier (local package)
+- @bsv/simple (local package)
 - Tailwind CSS
 
 ## Notes
@@ -189,5 +189,5 @@ After testing the basic functionality:
 
 ---
 
-**Built with @bsv/simplifier**
+**Built with @bsv/simple**
 Simplifying BSV blockchain development

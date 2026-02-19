@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@bsv/sdk": "^1.10.3",
-    "@bsv/simplifier": "file:../simple",
+    "@bsv/simple": "file:../simplifier-v2",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"

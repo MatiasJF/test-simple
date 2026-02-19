@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Wallet, Overlay, Certifier, DID, createWallet, toVerifiableCredential } from '@bsv/simplifier/browser'
+import { Wallet, Overlay, Certifier, DID, createWallet, toVerifiableCredential } from '@bsv/simple/browser'
 
 export default function TestSimplifyPage() {
   const [wallet, setWallet] = useState<any | null>(null)
@@ -116,7 +116,7 @@ export default function TestSimplifyPage() {
       const result = await wallet.pay({
         to: wallet.getIdentityKey(),
         satoshis: 1000,
-        memo: 'Test payment from simplifier!',
+        memo: 'Test payment from simple!',
         basket: 'test-simple-payment',
         changeBasket: 'recovered-change'
       })
@@ -151,7 +151,7 @@ export default function TestSimplifyPage() {
       const result = await wallet.send({
         outputs: [
           { to: wallet.getIdentityKey(), satoshis: 1000 },
-          { data: ['simplifier-test', JSON.stringify({ ts: Date.now() })] },
+          { data: ['simple-test', JSON.stringify({ ts: Date.now() })] },
           { to: wallet.getIdentityKey(), data: ['test-field'], satoshis: 1 }
         ],
         description: 'Multi-output test',
@@ -435,7 +435,7 @@ export default function TestSimplifyPage() {
     setLoading(true)
     setStatus('Creating inscription...')
     try {
-      const result = await wallet.inscribeText('Hello from BSV Simplifier! ' + new Date().toISOString())
+      const result = await wallet.inscribeText('Hello from BSV Simple! ' + new Date().toISOString())
       setStatus(`Inscription created! TXID: ${result.txid.substring(0, 20)}...`)
       addResult({
         type: 'inscription',
@@ -1309,7 +1309,7 @@ export default function TestSimplifyPage() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
-            BSV Simplifier
+            BSV Simple
           </h1>
           <p className="text-white/90 text-lg">Interactive Test Suite</p>
         </div>
@@ -1726,7 +1726,7 @@ export default function TestSimplifyPage() {
 
         {/* Footer */}
         <div className="mt-8 text-center text-white text-sm">
-          <p className="drop-shadow-lg">Built with @bsv/simplifier • Testing simplified BSV development</p>
+          <p className="drop-shadow-lg">Built with @bsv/simple • Testing simplified BSV development</p>
         </div>
       </div>
     </div>
