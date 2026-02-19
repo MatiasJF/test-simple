@@ -1,5 +1,5 @@
 {
-  "name": "test-simplify",
+  "name": "test-simple",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@bsv/sdk": "^1.10.3",
-    "@bsv/simplifier": "file:../simplifier-v2",
+    "@bsv/simplifier": "file:../simple",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"

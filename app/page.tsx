@@ -117,7 +117,7 @@ export default function TestSimplifyPage() {
         to: wallet.getIdentityKey(),
         satoshis: 1000,
         memo: 'Test payment from simplifier!',
-        basket: 'test-simplify-payment',
+        basket: 'test-simple-payment',
         changeBasket: 'recovered-change'
       })
       const reint = result.reinternalized
@@ -680,7 +680,7 @@ export default function TestSimplifyPage() {
       setStatus(`Got request for ${paymentRequest.satoshis} sats. Funding...`)
 
       // Step 2: Fund with BRC-29 derived payment
-      const result = await wallet.fundServerWallet(paymentRequest, 'test-simplify-server-payment', 'recovered-change')
+      const result = await wallet.fundServerWallet(paymentRequest, 'test-simple-server-payment', 'recovered-change')
       setStatus('Payment created. Sending to server for internalization...')
 
       // Step 3: Send tx back to server
@@ -725,10 +725,10 @@ export default function TestSimplifyPage() {
   // Desktop Wallet: Balance (across app baskets)
   // ============================================================================
   const APP_BASKETS = [
-    'test-simplify-payment',
-    'test-simplify-server-payment',
-    'test-simplify-messagebox-payment',
-    'test-simplify-reinternalize-outputs',
+    'test-simple-payment',
+    'test-simple-server-payment',
+    'test-simple-messagebox-payment',
+    'test-simple-reinternalize-outputs',
     'recovered-change',
     'test-tokens', 'text', 'json'
   ]
@@ -1078,7 +1078,7 @@ export default function TestSimplifyPage() {
     setStatus('Accepting incoming payment...')
     try {
       const payment = incomingPayments[0]
-      const result = await wallet.acceptIncomingPayment(payment, 'test-simplify-messagebox-payment')
+      const result = await wallet.acceptIncomingPayment(payment, 'test-simple-messagebox-payment')
       setIncomingPayments(prev => prev.slice(1))
       setStatus('Payment accepted and internalized!')
       addResult({
